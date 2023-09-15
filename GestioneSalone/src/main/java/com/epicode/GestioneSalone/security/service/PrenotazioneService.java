@@ -2,7 +2,7 @@ package com.epicode.GestioneSalone.security.service;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,12 +31,12 @@ public class PrenotazioneService {
 	}
 	
 	//metodo per salvare una prenotazione nel DB
-	public void salvaPrenotazine(Prenotazione pren) {
-		prenRep.save(pren);
+	public Prenotazione salvaPrenotazine(Prenotazione pren) {
+		return prenRep.save(pren);
 	}
 	
-	public List<Prenotazione> getPrenotazioni(){
-		return (List<Prenotazione>) prenRep.findAll();
+	public Set<Prenotazione> getPrenotazioni(){
+		return (Set<Prenotazione>) prenRep.findAll();
 	}
 
 }

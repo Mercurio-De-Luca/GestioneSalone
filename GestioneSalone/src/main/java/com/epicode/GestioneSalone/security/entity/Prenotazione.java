@@ -27,11 +27,11 @@ public class Prenotazione {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(nullable = false, unique = true)
+	@Column(nullable = false)
 	private String cliente;
-	@Column(nullable = false, unique = true)
+	@Column(nullable = false)
 	private LocalDate data;
-	@Column(nullable = false, unique = true)
+	@Column(nullable = false)
 	private LocalTime ora;
 	
 	public Prenotazione(String cliente, LocalDate data, LocalTime ora) {
