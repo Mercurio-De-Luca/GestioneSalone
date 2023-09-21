@@ -27,14 +27,14 @@ export class FormLoginComponent implements OnInit {
           this.error = undefined;
           this.gs.loggedIn = true;
           localStorage.setItem('userLogin', JSON.stringify(resp));
-          this.router.navigate(['/users'])
+          this.router.navigate(['/home'])
         }, err => {
           console.log(err.error.message);
           this.error = err.error.message;
         })
       this.error = undefined;
   } else {
-    this.error = 'Field Required';
+    this.error = 'Inserisci credenziali';
   }
   }
 }

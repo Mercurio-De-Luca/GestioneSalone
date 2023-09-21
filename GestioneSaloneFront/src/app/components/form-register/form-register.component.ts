@@ -21,21 +21,31 @@ export class FormRegisterComponent implements OnInit {
   }
 
   onSubmit(){
-    if(  this.form.value.username.trim() !== ''
+    if(   this.form.value.name.trim() !== ''
+      && this.form.value.lastname.trim() !== ''
+      && this.form.value.username.trim() !== ''
       && this.form.value.email.trim() !== ''
       && this.form.value.password.trim() !== '') {
         this.gs.signup(this.form.value).subscribe(
           resp => {
             console.log(resp);
+            this.form.setValue({
+              name: '',
+              lastname: '',
+              username: '',
+              email: '',
+              password: ''
+            });
+            this.router.navigate(['']);
             this.error = undefined;
-            this.router.navigate(['/login'])
           }, err => {
             console.log(err.error.message);
             this.error = err.error.message;
+            this.router.navigate(['']);
           }
         );
     } else {
-      this.error = 'Field Required';
+      this.error = 'Inserisci credenziali';
     }
   }
 }
