@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="row my-5">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <form #f="ngForm" (ngSubmit)="onSubmit()">
+        <h1>Registrati</h1>
+        <div class="mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            ngModel
+            name="name"
+            placeholder="Enter Name..."
+          />
+        </div>
+        <div class="mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="lastname"
+            ngModel
+            name="lastname"
+            placeholder="Enter lastname..."
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            ngModel
+            name="username"
+            placeholder="Enter Username..."
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            ngModel
+            name="email"
+            placeholder="Enter Email..."
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            ngModel
+            name="password"
+            placeholder="Enter Password..."
+            required
+          />
+        </div>
+        <div class="d-grid gap-2">
+          <button class="btn btn-primary" type="submit">Register</button>
+        </div>
+        <p class="my-3">Sei già registrato?<a [routerLink]="['']">Accedi</a></p>
+      </form>
+      <div class="alert alert-danger my-3" role="alert" *ngIf="error">
+        {{ error }}
+      </div>
+    </div>
+    <div class="col-4"></div>
+  </div>
+</div>
