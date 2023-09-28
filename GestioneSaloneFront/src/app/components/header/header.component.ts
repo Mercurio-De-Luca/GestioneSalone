@@ -9,6 +9,8 @@ import { GestioneSaloneService } from 'src/app/service/gestione-salone-service.s
 })
 export class HeaderComponent {
 
+  nomeUser: String = "sto cazzo";
+
   constructor(private gs: GestioneSaloneService, private router: Router){}
 
   logout(){

@@ -1,18 +1,30 @@
 <app-header></app-header>
-<main class="container">
+<main class="container-fluid h-100 imgBg">
   <div class="row">
-    <div class="col-6">
-      <h1 class="m-5">BENVEUTO NEL TUO SALONE</h1>
-      <h3 class="m-5">
-        Entri che sei in crisi esistenziale, esci che sei un incanto universale.
-      </h3>
-      <h2 class="m-5">Succede solo dal tuo parrucchiere!!</h2>
+    <div
+      class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center"
+    >
+      <div class="bg d-flex flex-column ms-4">
+        <h1 class="m-3 p-3">BENVEUTO NEL TUO SALONE</h1>
+        <h4 class="m-3">
+          Entri che sei in crisi esistenziale, esci che sei un incanto
+          universale.
+        </h4>
+      </div>
+      <!-- <h2 class="text-light">Succede solo dal tuo parrucchiere!!</h2> -->
     </div>
-    <div class="col-6 d-flex justify-content-center align-items-center">
-      <a [routerLink]="['prenota']" class="btn btn-primary"
-        >PRENOTA QUI IL TUO TAGLIO</a
-      >
+    <div
+      class="col-12 col-md-6 d-flex justify-content-center align-items-center"
+    >
+      <button>
+        <span class="text">PRENOTA QUI IL TUO TAGLIO</span
+        ><span
+          ><a [routerLink]="['prenota']" class="text-decoration-none text-light"
+            >PRENOTA</a
+          ></span
+        >
+      </button>
     </div>
   </div>
 </main>
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->

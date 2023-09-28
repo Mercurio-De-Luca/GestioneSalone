@@ -1,47 +1,52 @@
 <app-header></app-header>
-<h1 class="my-5 text-center">Prenota</h1>
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <h1 class="my-5 text-center">Prenota</h1>
+  </div>
+  <form #f="ngForm" (ngSubmit)="salvaPrenotazione()">
+    <div class="row d-flex mb-3 bg">
+      <div class="col-12 col-md-6 d-flex justify-content-center p-5">
+        <ngb-datepicker
+          class="bg-secondary"
+          ngModel
+          name="data"
+          #dp="ngbDatepicker"
+          (dateSelect)="onDateSelect($event)"
+        ></ngb-datepicker>
+      </div>
+      <div class="col-12 col-md-6 p-5">
+        <label for="ora" class="form-label">Ora:</label>
+        <select class="form-select" id="ora" ngModel name="ora" required>
+          <option value="9:00">9:00</option>
+          <option value="10:00">10:00</option>
+          <option value="11:00">11:00</option>
+          <option value="12:00">12:00</option>
+          <option value="13:00">13:00</option>
+          <option value="14:00">14:00</option>
+          <option value="15:00">15:00</option>
+          <option value="16:00">16:00</option>
+          <option value="17:00">17:00</option>
+          <option value="18:00">18:00</option>
+        </select>
 
-<form #f="ngForm" (ngSubmit)="salvaPrenotazione()">
-  <div class="mb-3">
-    <ngb-datepicker
-      ngModel
-      name="data"
-      #dp="ngbDatepicker"
-      (dateSelect)="onDateSelect($event)"
-    ></ngb-datepicker>
-  </div>
-  <div class="mb-3">
-    <label for="ora" class="form-label">Ora:</label>
-    <select class="form-select" id="ora" ngModel name="ora" required>
-      <option value="9:00">9:00</option>
-      <option value="10:00">10:00</option>
-      <option value="11:00">11:00</option>
-      <option value="12:00">12:00</option>
-      <option value="13:00">13:00</option>
-      <option value="14:00">14:00</option>
-      <option value="15:00">15:00</option>
-      <option value="16:00">16:00</option>
-      <option value="17:00">17:00</option>
-      <option value="18:00">18:00</option>
-    </select>
-  </div>
-  <div class="mb-3">
-    <input
-      type="text"
-      class="form-control"
-      id="cliente"
-      ngModel
-      name="cliente"
-      placeholder="inserisci il tuo nome"
-      required
-    />
-  </div>
-  <div class="d-grid gap-2">
-    <button class="btn btn-primary" type="submit">Prenota</button>
-  </div>
-</form>
-
+        <input
+          type="text"
+          class="form-control my-5"
+          id="cliente"
+          ngModel
+          name="cliente"
+          placeholder="inserisci il tuo nome"
+          required
+        />
+        <div class="d-grid gap-2">
+          <button class="btn btn-primary" type="submit">Prenota</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
 <div class="alert alert-danger my-3" role="alert" *ngIf="error">
   {{ error }}
 </div>
-<app-footer></app-footer>
+
+<!-- <app-footer></app-footer> -->

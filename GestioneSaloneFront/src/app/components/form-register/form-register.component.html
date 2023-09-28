@@ -1,17 +1,19 @@
 <div class="container">
   <div class="row my-5">
-    <div class="col-4"></div>
-    <div class="col-4">
-      <form #f="ngForm" (ngSubmit)="onSubmit()">
-        <h1>Registrati</h1>
+    <div class="col-md-4"></div>
+    <div class="col-12 col-lg-4 bgDivReg">
+      <div class="d-flex justify-content-center">
+        <h1 class="mt-5">Registrati</h1>
+      </div>
+      <form #f="ngForm" (ngSubmit)="onSubmit()" class="p-3">
         <div class="mb-3">
           <input
             type="text"
-            class="form-control"
+            class="form-control mt-2"
             id="name"
             ngModel
             name="name"
-            placeholder="Enter Name..."
+            placeholder="Inserisci il tuo nome"
           />
         </div>
         <div class="mb-3">
@@ -21,7 +23,7 @@
             id="lastname"
             ngModel
             name="lastname"
-            placeholder="Enter lastname..."
+            placeholder="Inserisci il tuo cognome"
             required
           />
         </div>
@@ -32,7 +34,7 @@
             id="username"
             ngModel
             name="username"
-            placeholder="Enter Username..."
+            placeholder="Inserisci lo Username"
             required
           />
         </div>
@@ -43,7 +45,7 @@
             id="email"
             ngModel
             name="email"
-            placeholder="Enter Email..."
+            placeholder="Inserisci la tua email"
             required
           />
         </div>
@@ -54,12 +56,12 @@
             id="password"
             ngModel
             name="password"
-            placeholder="Enter Password..."
+            placeholder="Inserisci la password"
             required
           />
         </div>
         <div class="d-grid gap-2">
-          <button class="btn btn-primary" type="submit">Register</button>
+          <button class="btn btn-primary" type="submit">Registrati</button>
         </div>
         <p class="my-3">Sei già registrato?<a [routerLink]="['']">Accedi</a></p>
       </form>
@@ -67,6 +69,6 @@
         {{ error }}
       </div>
     </div>
-    <div class="col-4"></div>
+    <div class="col-md-4"></div>
   </div>
 </div>
