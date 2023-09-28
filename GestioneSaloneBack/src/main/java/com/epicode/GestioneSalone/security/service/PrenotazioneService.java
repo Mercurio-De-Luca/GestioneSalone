@@ -1,7 +1,9 @@
 package com.epicode.GestioneSalone.security.service;
 
+
 import java.time.LocalDate;
-import java.time.LocalTime;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.ObjectProvider;
@@ -20,7 +22,7 @@ public class PrenotazioneService {
 	@Autowired @Qualifier("prenotazioneBean") private ObjectProvider<Prenotazione> prenotazione;
 
 	//fare il metodo per creare la prenotazione con il bean
-	public Prenotazione creaPrenotazione(String cliente, LocalDate data, LocalTime ora) {
+	public Prenotazione creaPrenotazione(String cliente, LocalDate data, String ora) {
 		Prenotazione p = prenotazione.getObject();
 		
 		return p.builder()
@@ -36,7 +38,8 @@ public class PrenotazioneService {
 	}
 	
 	public Set<Prenotazione> getPrenotazioni(){
-		return (Set<Prenotazione>) prenRep.findAll();
+		 List<Prenotazione> prenotazioniList = (List<Prenotazione>) prenRep.findAll();
+		 return new HashSet<>(prenotazioniList);
 	}
 
 }

@@ -25,9 +25,11 @@ export class FormLoginComponent implements OnInit {
         resp => {
           console.log(resp);
           this.error = undefined;
-          this.gs.loggedIn = true;
           localStorage.setItem('userLogin', JSON.stringify(resp));
-          this.router.navigate(['/home'])
+          console.log(resp);
+          this.router.navigate(['home'])
+          this.gs.loggedIn = true;
+          localStorage.setItem('loggedIn', 'true');
         }, err => {
           console.log(err.error.message);
           this.error = err.error.message;

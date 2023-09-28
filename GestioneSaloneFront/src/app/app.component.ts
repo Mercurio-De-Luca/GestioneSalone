@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { ISignupData } from './interfaces/isignup-data';
+import { Component, OnInit } from '@angular/core';
+import { GestioneSaloneService } from './service/gestione-salone-service.service';
 
 @Component({
   selector: 'app-root',

@@ -26,15 +26,18 @@ public class Prenotazione {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	@Column(nullable = false)
-	private String cliente;
-	@Column(nullable = false)
-	private LocalDate data;
-	@Column(nullable = false)
-	private LocalTime ora;
+    private Long id;
+    
+    @Column(nullable = false)
+    private String cliente;
+    
+    @Column(nullable = false)
+    private LocalDate data;
+    
+    @Column(nullable = false)
+    private String ora;
 	
-	public Prenotazione(String cliente, LocalDate data, LocalTime ora) {
+	public Prenotazione(String cliente, LocalDate data, String ora) {
 		this.cliente = cliente;
 		this.data = data;
 		this.ora = ora;
