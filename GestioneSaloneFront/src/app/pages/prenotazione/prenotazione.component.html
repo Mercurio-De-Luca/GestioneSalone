@@ -41,12 +41,15 @@
         <div class="d-grid gap-2">
           <button class="btn btn-primary" type="submit">Prenota</button>
         </div>
+        <div class="alert alert-danger my-3" role="alert" *ngIf="error">
+          {{ error }}
+        </div>
       </div>
     </div>
   </form>
 </div>
-<div class="alert alert-danger my-3" role="alert" *ngIf="error">
+<!-- <div class="alert alert-danger my-3" role="alert" *ngIf="error">
   {{ error }}
-</div>
+</div> -->
 
 <!-- <app-footer></app-footer> -->

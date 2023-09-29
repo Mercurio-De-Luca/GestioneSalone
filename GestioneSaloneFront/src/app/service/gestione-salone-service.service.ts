@@ -26,7 +26,6 @@ export class GestioneSaloneService {
     return this.http.post('http://localhost:8080/api/auth/login', user);
   }
 
-  // Metodo per verificare lo stato di autenticazione
   getPrenotazioni(): Observable<IPrenotazione[]> {
     let json = localStorage.getItem('userLogin');
     if (json) {
@@ -34,7 +33,7 @@ export class GestioneSaloneService {
         this.headers = this.headers.set('Authorization', 'Bearer ' + userLogin.accessToken);
     }
 
-    // Imposta withCredentials su true
+
     const options = { headers: this.headers, withCredentials: true };
 
    return  this.http.get<IPrenotazione[]>('http://localhost:8080/api/prenotazioni/tutte');
@@ -42,7 +41,7 @@ export class GestioneSaloneService {
 
 
 
-  //metodo per salvare la prenotazione nel DB
+
   salvaPren(prenotazione: IPrenotazione){
     let json = localStorage.getItem('userLogin');
     if (json) {
@@ -50,15 +49,13 @@ export class GestioneSaloneService {
         this.headers = this.headers.set('Authorization', 'Bearer ' + userLogin.accessToken);
     }
 
-    // Imposta withCredentials su true
+
     const options = { headers: this.headers, withCredentials: true };
 
     return this.http.post('http://localhost:8080/api/prenotazioni/prenota', prenotazione, options);
 }
 
   isAuth() {
-    // return false;
-    // return this.loggedIn;
     const loggedIn = localStorage.getItem('loggedIn');
   return loggedIn === 'true';
   }

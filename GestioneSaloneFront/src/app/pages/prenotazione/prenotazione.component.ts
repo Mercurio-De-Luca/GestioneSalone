@@ -38,16 +38,13 @@ export class PrenotazioneComponent implements OnInit{
 
         let formattedDate = year + '-' + month + '-' + day;
 
-        // Chiamata al service per ottenere le prenotazioni
         this.gs.getPrenotazioni().subscribe(
             (prenotazioni: IPrenotazione[]) => {
-                // Verifica se esiste già una prenotazione con la stessa data e ora
                 const prenotazioneEsistente = prenotazioni.find((prenotazione) => {
                     return prenotazione.data === formattedDate && prenotazione.ora === this.form.value.ora;
                 });
 
                 if (!prenotazioneEsistente) {
-                    // Nessuna prenotazione con la stessa data e ora, procedi con la prenotazione
                     this.form.value.data = formattedDate;
                     console.log(this.form.value);
                     this.gs.salvaPren(this.form.value).subscribe(
@@ -62,7 +59,6 @@ export class PrenotazioneComponent implements OnInit{
                         }
                     );
                 } else {
-                    // Esiste già una prenotazione con la stessa data e ora, mostra un messaggio di errore
                     this.error = 'L\'ora è già stata prenotata per questa data.';
                     this.form.reset();
                 }
